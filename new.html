@@ -13,9 +13,34 @@
         height: 200px;
         margin: 0 auto;
       }
+      #intro {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background-color: #252525;
+        opacity: 1;
+      }
+      .fadeout {
+        opacity: 0;
+        transition: opacity 1s 0.4s ease-out;
+      }
     </style>
+    <script type="text/javascript">
+      function changeClass(theElem, theClass, theAction){
+        if(theAction == 'add')
+          document.getElementById(theElem).classList.add(theClass);
+        if(theAction == 'remove')
+        document.getElementById(theElem).classList.remove(theClass);
+      }
+      window.onload = function(){
+        changeClass('intro', 'fadeout', 'add')
+      }
+    </script>
   </head>
   <body style="background-color: #252525;">
+    <div id="intro"></div>
     <div class="main">
       &gt;&gt; winter is ending / &lt;&lt;
     </div>
