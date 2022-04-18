@@ -21,27 +21,32 @@
         z-index: 999;
         background-color: #252525;
         opacity: 1;
-        transition: opacity 6s 1s ease-out;
+        transition: opacity 3s 1s ease-out;
       }
-      .fadeout {
+      #cmloading {
+        
+      }
+      .fadeout_long {
         opacity: 0!important;
-        transition: opacity 6s 1s ease-out;
+        transition: opacity 3s 1s ease-out;
       }
     </style>
     <script type="text/javascript">
-      function changeClass(theElem, theClass, theAction){
+      function changeClass(theAction, theClass, theElem){
         if(theAction == 'add')
           document.getElementById(theElem).classList.add(theClass);
         if(theAction == 'remove')
         document.getElementById(theElem).classList.remove(theClass);
       }
       window.onload = function(){
-        changeClass('intro', 'fadeout', 'add')
+        changeClass('add', 'fadeout_long', 'intro')
       }
     </script>
   </head>
   <body style="background-color: #252525;">
-    <div id="intro"></div>
+    <div id="intro">
+      <div id="cmloading" style="background-image:url(assets/cyphermonksloading.gif)"></div>
+    </div>
     <div class="main">
       &gt;&gt; winter is ending / &lt;&lt;
     </div>
